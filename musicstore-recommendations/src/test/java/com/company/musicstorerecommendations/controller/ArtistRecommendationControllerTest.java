@@ -51,7 +51,7 @@ public class ArtistRecommendationControllerTest {
         doReturn(artistRecommendation).when(service).getArtistRecommendation(1);
         doReturn(artistRecommendation).when(service).createArtistRecommendation(artistRecommendationWithoutId);
         doNothing().when(service).updateArtistRecommendation(artistRecommendation);
-        doNothing().when(service).deleteTrackRecommendation(1);
+        doNothing().when(service).deleteArtistRecommendation(1);
     }
 
     @Test
@@ -95,7 +95,7 @@ public class ArtistRecommendationControllerTest {
     }
 
     @Test
-    public void updateArtistRecommendationShouldReturnUpdatedAlbumAndStatus204() throws Exception {
+    public void updateArtistRecommendationShouldReturnUpdatedRecommendationAndStatus204() throws Exception {
         ArtistRecommendation inputArtistRecommendation = new ArtistRecommendation(1,1, 1, true);
         ArtistRecommendation outputArtistRecommendation = new ArtistRecommendation(1, 1, 1, false);
         String inputArtistRecommendationJson = mapper.writeValueAsString(inputArtistRecommendation);
